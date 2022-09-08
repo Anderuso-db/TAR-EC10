@@ -28,16 +28,19 @@ msg = 'The information security is of significant importance to ensure the priva
 #números primos p e q
 p = 83
 q = 89
+print('p:', p)
+print('q:', q)
 
 #n = p * q
 n = p * q
 
 #função totiene phi(n) = (p - 1)(q - 1)
 phi = (p - 1) * (q - 1)
-print('phi', phi)
+print('phi:', phi)
 
 #numero "e" onde ' 1 < e < phi(n) | "e" e phi(n) devem ser primos entre si
 e = random.randrange(1, phi)
+
 
 g = gcd(e, phi)
 
@@ -46,18 +49,24 @@ while g != 1:
     e = random.randrange(1, phi)  
     g = gcd(e, phi)
 
+print('e:', e)
+
 # d = inverso multiplicativo de "e"
 d = multiplicativeInverse(e,phi)
-print ('d', d)
+print ('d:', d)
 
 privateKey = (e, n)
 publicKey = (d, n)
+
+print('privateKey: ', privateKey)
+print('publicKey: ', publicKey)
 
 # Criptografando a mensagem
 messageEncrypted = encrypt(privateKey, msg)
 print('==================================================================')
 print('messageEncrypted: ')
 print(messageEncrypted)
+print()
 
 # Decriptografando a mensagem
 messageDecrypted = decrypt(publicKey, messageEncrypted)
