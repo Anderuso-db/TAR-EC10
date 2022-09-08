@@ -55,8 +55,12 @@ publicKey = (d, n)
 
 # Criptografando a mensagem
 messageEncrypted = encrypt(privateKey, msg)
-print('messageEncrypted ', messageEncrypted)
+print('==================================================================')
+print('messageEncrypted: ')
+print(messageEncrypted)
 
 # Decriptografando a mensagem
 messageDecrypted = decrypt(publicKey, messageEncrypted)
-print('messageDecrypted ', messageDecrypted)
+print('==================================================================')
+print('messageDecrypted: ')
+print(messageDecrypted)
