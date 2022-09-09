@@ -13,16 +13,6 @@ def multiplicativeInverse(e,r):
         if((e*i)%r == 1):
             return i
 
-def encrypt(privateKey, message):
-    key, n = privateKey
-    cipher = [(ord(char) ** key) % n for char in message]
-    return cipher
-
-def decrypt(publicKey, ciphertext):
-    key, n = publicKey
-    plain = [chr((char ** key) % n) for char in ciphertext]
-    return ''.join(plain)
-
 msg = 'The information security is of significant importance to ensure the privacy of communications'
 
 #números primos p e q
@@ -61,6 +51,16 @@ publicKey = (d, n)
 print('privateKey: ', privateKey)
 print('publicKey: ', publicKey)
 
+def encrypt(privateKey, message):
+    key, n = privateKey
+    cipher = [(ord(char) ** key) % n for char in message]
+    return cipher
+
+def decrypt(publicKey, ciphertext):
+    key, n = publicKey
+    plain = [chr((char ** key) % n) for char in ciphertext]
+    return ''.join(plain)
+    
 # Criptografando a mensagem
 messageEncrypted = encrypt(privateKey, msg)
 print('==================================================================')
