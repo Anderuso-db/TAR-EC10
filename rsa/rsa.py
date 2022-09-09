@@ -1,3 +1,6 @@
+# Anderson Dias Bonadio - 081180003 
+# Guilherme Machado Mecenero - 081180011 
+# Helio Carlos de Carvalho Junior - 081180015
 
 import random
 
@@ -31,7 +34,6 @@ print('phi:', phi)
 #numero "e" onde ' 1 < e < phi(n) | "e" e phi(n) devem ser primos entre si
 e = random.randrange(1, phi)
 
-
 g = gcd(e, phi)
 
 while g != 1:
@@ -60,7 +62,7 @@ def decrypt(publicKey, ciphertext):
     key, n = publicKey
     plain = [chr((char ** key) % n) for char in ciphertext]
     return ''.join(plain)
-    
+
 # Criptografando a mensagem
 messageEncrypted = encrypt(privateKey, msg)
 print('==================================================================')
